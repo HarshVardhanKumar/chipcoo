@@ -1,0 +1,80 @@
+#upload_profile_picture_confirm_dialog_box {
+  width:400px;
+  margin:auto ;
+  text-align:center;
+  border:2px solid #aaa;
+  border-radius:15px;
+  box-shadow: 1px 4px #ddd ;
+  background-color:white ;
+  overflow:hidden ;
+  position: fixed ;
+  z-index: 4 ;
+  top: 40vh ;
+  left: 50vw ;
+  margin-left: -200px ;
+  margin-top: -100px ;
+  display: none ;
+}
+
+#upper_part_of_upload_profile_picture_confirm_dialog_box {
+  padding:20px;
+  border-bottom:1px solid #aaa;
+  background-color:#efe ; ;
+  font-size: 1.2em;
+  font-weight: 600 ;
+}
+
+#cancel_dialog_confirm_profile_picture {
+  color: #aaa ;
+}
+#cancel_dialog_confirm_profile_picture:hover {
+  color: red ;
+  cursor: pointer;
+}
+
+
+#lower_part_of_upload_profile_picture_confirm_dialog_box {
+
+}
+#container_of_profile_picture {
+  margin:auto ;
+  border-radius:50%;
+  width:200px;
+  height:200px;
+  overflow:hidden;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+#user_profile_upload_profile_buttons {
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+#cancel_user_profile_upload_button {
+  border:1.5px solid rgb(56,133,188);
+  color: rgb(56,133,188);
+}
+
+#cancel_user_profile_upload_button:hover {
+  background-color: rgb(56,133,188) ;
+  color:white ;
+  cursor:pointer ;
+}
+
+#upload_user_profile_upload_button {
+  color: rgb(27,142,15);
+  border:1.5px solid rgb(27,142,15);
+  margin-left:20px;
+}
+
+#upload_user_profile_upload_button:hover {
+  background-color: rgb(27,142,15) ;
+  color:white ;
+  cursor:pointer ;
+}
+
+.lower_part_button_user_profile_upload {
+  padding:5px 15px ;
+  border-radius:10px;
+}

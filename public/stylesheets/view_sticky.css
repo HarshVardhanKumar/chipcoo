@@ -1,0 +1,113 @@
+#show_sticky {
+  margin: auto ;
+  padding: 20px 0 ;
+  position: fixed;
+  top: 0;
+  left: 2vw ;
+  width: 95vw ;
+  height: 100vh ;
+  z-index: 500;
+  display: none ;
+}
+
+#show_sticky_upper_part {
+  color: #fff ;
+  font-size: 4em ;
+}
+
+#close_button {
+  display: inline-block ;
+  position: relative ;
+  left: 90vw ;
+  cursor: pointer ;
+}
+
+#close_button:hover {
+  color: red ;
+}
+#left_part_show_sticky, #right_part_show_sticky {
+  float: left ;
+  padding: 20px ;
+  padding-left: 0px ;
+  width: 45vw ;
+}
+#sticky_image_show_sticky {
+  width: 100% ;
+  vertical-align: middle ;
+  border-radius : 20px ;
+}
+
+#uploader_details_show_sticky, #sticky_title_show_sticky, #sticky_description_show_sticky, #user_review {
+  padding: 10px 10px ;
+  border-radius: 10px ;
+  background-color: #fff ;
+  overflow: hidden ;
+}
+#uploader-image {
+  vertical-align: middle ;
+  border-radius: 50% ;
+}
+#uploader_name_show_sticky {
+  font-weight: 600 ;
+  padding: 10px ;
+  font-size: 20px ;
+}
+
+#sticky_title_show_sticky {
+  margin: 10px 0 ;
+  font-weight: bold ;
+  font-size: 1.5em ;
+}
+
+#sticky_description_show_sticky {
+  margin: 10px 0 ;
+  font-size: 1.05em ;
+  padding: 10px ;
+}
+
+#review_name {
+  margin: auto ;
+  text-align: center ;
+  font-size: 1.2em ;
+  font-weight: bold ;
+  color: rgb(56,133, 188) ;
+  padding: 10px ;
+}
+
+#show_sticky .ratings {
+  margin: auto ;
+  text-align: center ;
+}
+
+#show_sticky .ratings .fa {
+  font-size: 2em ;
+  padding: 5px 10px ;
+  vertical-align: middle ;
+  color: black ;
+}
+
+#submit_ratings {
+  border: 1.5px solid rgb(55,133,188) ;
+  padding: 5px 15px ;
+  border-radius: 10px ;
+  color: rgb(55,133,188) ;
+}
+
+#submit_ratings:hover {
+  background-color: rgb(55,133,188) ;
+  color: white ;
+  cursor: pointer ;
+}
+
+#show_sticky .ratings .fa-smile-o:hover {
+  color: green ;
+  cursor: pointer ;
+}
+#show_sticky .ratings .fa-meh-o:hover {
+  color: grey ;
+  cursor: pointer;
+}
+#show_sticky .ratings .fa-frown-o:hover {
+  color: red ;
+  cursor: pointer;
+}

@@ -1,0 +1,71 @@
+.body_sticky {
+  width: 250px ;
+  text-align:center ;
+  border: 2px solid #ddd ;
+  border-radius: 10px ;
+  background-color: white ;
+  cursor:pointer ;
+  margin-bottom: 20px
+}
+
+body {
+  background-color: #eee ;
+}
+
+.sticky_title {
+  font-size: 1.02em ;
+  padding: 10px ;
+  font-weight: 600 ;
+  text-align:left ;
+}
+
+.sticky_rating {
+  color: rgb(56,133,188) ;
+  padding: 10px ;
+}
+
+.sticky_rating .fa {
+  font-size: 1.4em ;
+  vertical-align: middle;
+  display: inline-block;
+  padding-right: 10px ;
+}
+
+.fa-smile-o {
+  color: #007a00 ;
+}
+.fa-meh-o {
+  color: grey ;
+}
+.fa-frown-o {
+  color: red ;
+}
+.ratingsvalue {
+  padding-right:5px ;
+  color: brown ;
+}
+
+@media screen and (max-width: 600px) {
+  .body_sticky {
+    width: 150px ;
+  }
+  .sticky_title {
+    font-size: 0.8em ;
+    padding: 5px ;
+  }
+  .sticky_rating {
+    color: rgb(56,133,188) ;
+    padding: 5px ;
+  }
+  .sticky_rating .fa {
+    font-size: 1em ;
+    vertical-align: middle;
+    display: inline-block;
+    padding-right: 5px ;
+  }
+  .ratingsvalue {
+    padding-right:3px ;
+    color: brown ;
+    font-size: 0.8em ;
+  }
+}

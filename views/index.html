@@ -1,0 +1,308 @@
+<html>
+  <head>
+    <title>chipcoo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "public/stylesheets/user_profile_dialog.css"></link>
+    <link rel = "stylesheet" href="public/stylesheets/index.css"></link>
+    <link rel = "stylesheet" href="public/stylesheets/index_mobile.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+
+    <script src = "public/javascripts/index.js"></script>
+    <link rel = "stylesheet" href="public/stylesheets/sticky_body.css">
+    <link rel = "stylesheet" href="public/stylesheets/sticky_creation_dialog.css">
+    <script src="public/javascripts/login_signup.js"></script>
+
+    <script src="public/javascripts/sticky_creation.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src = "public/javascripts/notification.js"></script>
+    <link rel = "stylesheet" href= "public/stylesheets/confirm_user_profile_picture.css"></link>
+
+    <link rel = "stylesheet" href="public/stylesheets/notification.css"></link>
+    <link rel="stylesheet" href="public/stylesheets/login_signup.css">
+    <link rel="shortcut icon" href="public/images/favcon.ico" type="image/x-icon">
+    <link rel="icon" href="public/images/logo_home.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="public/stylesheets/loader.css"></link>
+    <link rel="stylesheet" href="public/stylesheets/view_sticky.css"></link>
+		<style>
+			.grid-item { width: 250px; padding: 10px 0px;}
+			.grid-item--width2 { width: 400px; }
+
+      @media screen and (max-width: 600px) {
+        .grid-item { width: 150px; padding: 10px 0px;}
+  			.grid-item--width2 { width: 220px; }
+
+      }
+		</style>
+    <link rel="stylesheet" href="public/stylesheets/logged_in_user.css"></link>
+
+  </head>
+  <body>
+
+    <div id = "upper_navigation">
+      <span id = "title"><img src = "public/images/logo_home.png" width = 40px height = 40px></span>
+      <span id = "user">
+        <img onclick="showLoginSignup()" id="user_icon" src = "public/images/user.png" width=30 height = 30>
+      </span>
+    </div>
+
+    <div class = "notification dialog">
+      <span class = "notification_content">
+        this is a notification
+      </span>
+      <span class = "close_notification" onclick = "close_notification()">&times;</span>
+    </div>
+
+    <div id = "controls_of_index.html">
+      <div id = "addbutton" onclick="Show_close_Add_Using_Website_DialogBox()">
+        <img src = "public/images/plus.png" width = 40 height = 40>
+      </div>
+
+      <!-- Currently not supported -->
+      <!--<div id = "addOptions_dialog_modal" class = "modal">
+        <div id = "add_options_dialog">
+          <ul style = "">
+            <li style = "cursor: pointer">Post a Stickky</li>
+            <li style = "cursor: pointer" onclick = "Show_close_Add_Using_Website_DialogBox()">Upload from a website</li>
+          </ul>
+        </div>
+      </div> -->
+
+      <!-- The add by website dialog box-->
+      <div id = "add_Using_Website_DialogBox_modal" class = "modal">
+        <div id = "add_Using_Website_DialogBox">
+          <span style ="position: relative ; font-size: 2.5em ; z-index:2 ;left: 95% ; color: red ; cursor: pointer" onclick="Show_close_Add_Using_Website_DialogBox()">&times;</span>
+          <p style="font-size: 1.5em ;font-weight:bold ; text-align: center ; display:inline-block;">
+            Insert the link of the image...
+          </p>
+          <p id = "notification_Of_Wrong_Url" style = "color:red"></p>
+          <div>
+            <input id="insert_link_of_image" required = true type = "url" name = "url" placeholder = "https://" style = "font-size: 1.1em ; padding: 5px ; width:85%; border: 1px solid #aba ; border-radius: 5px;">
+            <input type = "button" value = "Upload " style = "font-size: 1.1em ; padding: 5px ; border: 1px solid #aba ; border-radius: 5px; cursor: pointer" onclick="check_for_image_and_get_image_in_sticky_creation_form()">
+          </div>
+        </div>
+        <!-- End of the add by website block -->
+      </div>
+    </div>
+
+    <div id = "loader_modal" class = "whitemodal">
+      <div id="main_loader"  class="loader">
+    	<div id="fountainG_1" class="fountainG"></div>
+    	<div id="fountainG_2" class="fountainG"></div>
+    	<div id="fountainG_3" class="fountainG"></div>
+    	<div id="fountainG_4" class="fountainG"></div>
+    	<div id="fountainG_5" class="fountainG"></div>
+    </div>
+    </div>
+
+    <div class = "modal" id = "loggedin_user_option">
+      <div id = "logged_in_user_options" class = "modal-content">
+      <div id = "view_my_profile_option" onclick="viewUserProfile('current_user')">
+        View Profile
+      </div>
+      <div id = "logout_option" onclick="logout()">
+        Logout
+      </div>
+    </div>
+    </div>
+
+<!-- At the moment, removing the social login options. Later on, we may add it as required.-->
+    <div id = "login_signup_form_modal" class = "modal">
+      <div id = "login_signup_form">
+      <div id = "upper_part">
+        Join and be a chipcoo <span id="close_login_signup_form" onclick="showLoginSignup()">&times;</span>
+      </div>
+
+      <div id = "left_part">
+        <div id = "left_signup" onclick="signup()">
+          Signup
+        </div>
+        <div id = "left_login" style="text-align:center;" onclick="login_clicked()">
+          Login
+        </div>
+        <div id = "signup_form">
+          <input type = "text" id="signup_form_username" placeholder = "Username" name = "username" />
+          <input type = "text" id="signup_form_email_id" placeholder = "Email_id" name = "emailid" />
+          <input type = "password" id="signup_form_password" placeholder = "Password" name = "password" />
+          <div id = "register" onclick="register()">
+            Register
+          </div>
+        </div>
+        <div id = "login_form" style="display:none">
+          <input type = "text" id="login_form_email_id" placeholder = "Email_id" name = "emailid" />
+          <input type = "password" id="login_form_password" placeholder = "Password" name = "password" />
+          <div id = "Login" onclick="login()">
+            Login
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div id = "stick_creation_dialog_modal" class = "modal">
+      <div id = "stick_creation_dialog">
+        <div id = "upper_part_stick_creation_dialog">
+          <input type="text" id="upper_part_stick_creation_dialog_title" placeholder = "Title of your stick..." maxlength=20 />
+        </div>
+        <div id = "image_stick_creation_dialog">
+          <img id="image_of_image_stick_creation_dialog" src="https://1l72it1fanlr64wlk5io4t13-wpengine.netdna-ssl.com/wp-content/themes/flatsome-child/assets/images/dummy-img.jpg"/>
+        </div>
+        <div id = "lower_part_stick_creation_dialog">
+          <div id = "description_stick_creation_dialog">
+            <textarea id="description_stick_creation_dialog_text" required="true" maxlength="250" placeholder="Description (Html supported, 250 chars max)"></textarea>
+          </div>
+          <div id = "buttons_stick_creation_dialog">
+            <span id = "cancel_button_stick_creation_dialog" onclick="cancel_stick_creation_dialog()">Cancel</span>
+            <span id = "create_button_stick_creation_dialog" onclick="create_stick()">Create</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id = "content"  class="grid" data-masonry='{ "itemSelector": ".grid-item" }'>
+      <!-- stores of the stickys -->
+
+       <!-- first sticky is over -->
+    </div>
+
+    <div id = "show_sticky_modal" class = "modal">
+      <div id = "show_sticky">
+      <div id = "show_sticky_upper_part">
+        <span id = "close_button" onclick = "hideStickyModal()">&times;</span>
+      </div>
+
+      <div id = "left_part_show_sticky">
+        <!-- show the image of the sticky-->
+        <!-- show the img element with the width and height attributes calculated dynamically-->
+        <img src="https://imgpic.org/upload/images/287d4279-ff61-b2c6-637e-5972ecc8f5c5.jpg" id = "sticky_image_show_sticky">
+      </div>
+
+      <div id = "right_part_show_sticky">
+        <div id = "uploader_details_show_sticky">
+          <span id = "Uploader_image_show_sticky">
+          <!-- get the uploader_image from the server and set it here. Default width and height are 20 and 20, but the image stored in the server is 150 by 150 with reduced quality-->
+            <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" id = "uploader-image" width=50px height = 50px>
+          </span>
+          <span id = "uploader_name_show_sticky"> name of the uploader
+          </span>
+        </div>
+
+        <div id = "sticky_title_show_sticky">
+          name of the sticky
+        </div>
+
+        <div id = "sticky_description_show_sticky">
+           This part contains the description of the sticky -->
+        </div>
+
+        <div id = "user_review">
+          <div id = "review_name">Your review</div>
+
+          <div class="ratings">
+            <i class="fa fa-smile-o" aria-hidden="true"></i>
+            <i class="fa fa-meh-o" aria-hidden="true"></i>
+            <i class="fa fa-frown-o" aria-hidden="true"></i>
+            <span id = "submit_ratings" onclick = "submitUserReview()">Submit</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div id = "user_profile_dialogg" class = "modal">
+      <div id = "user_profile_view">
+        <div id = "wallpaper_user_profile" >
+          <!-- This part will contain the image wallpapers -->
+        </div>
+
+        <div id = "cancel_button_user_profile">
+          &times;
+        </div>
+
+          <div id = "list_of_sticky_uploaded_by_the_user" class = "list_grid" data-masonry='{ "itemSelector": ".list-grid-item", "columnWidth": 350 }'>
+             This part will contain list of all the stickys uploaded by the session_user.
+          </div>
+
+
+        <div id = "user_first_intro">
+          <label id = "profile_picture_chooser">
+            <img src = "https://avatars2.githubusercontent.com/u/13112792?s=460&v=4" width = 150 height = 150 />
+            <input id =  "choose_profile_picture" accept="image/*" class="authorized" type="file" style="position: fixed; top: -100em;" onchange = "show_Upload_Profile_Picture_Confirm_DialogBox()">
+          </label>
+
+          <p id = "user_name">
+            Username
+          </p>
+
+          <p class = "authorized" style="font-size:0.7em;">Click on the image to change</p>
+
+          <hr>
+
+          <p id = "no_of_sticky_uploaded">
+            No. of stickers uploaded : <span id = "no_of_stickers_count">6</span>
+          </p>
+
+          <div id = "earnings">
+            <span id = "smiles" style="display: inline-block;">
+              <div>
+                <i class = "fa fa-smile-o"></i>
+              </div>
+              <div id = "smiles_count">
+                5 smiles
+              </div>
+            </span>
+            <span id = "meh" style="display: inline-block;">
+              <div>
+                <i class = "fa fa-meh-o" ></i>
+              </div>
+              <div id = "meh_count">
+                5 mehs
+              </div>
+            </span>
+            <span id = "frowns" style="display: inline-block; ">
+              <div>
+                <i class = "fa fa-frown-o" ></i>
+              </div>
+              <div id = "frowns_count">
+                5 frowns
+              </div>
+            </span>
+          </div>
+
+          <div id = "user_description">
+            <textarea class = "authorized_edit" id = "description" placeholder = "You may add something about you here. (max 300 chars)" maxlength = 300></textarea>
+          </div>
+
+          <div class="authorized" id = "save_button" onclick = "updateUserProfile()">
+            Save
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div id = "confirm_profile_picture_modal" class = "modal">
+      <div id = "upload_profile_picture_confirm_dialog_box">
+        <div id = "upper_part_of_upload_profile_picture_confirm_dialog_box" >
+          <span>Confirm Profile Picture</span>
+          <span id = "cancel_dialog_confirm_profile_picture" style="float:right; font-size: 3em;margin-top: -28px" onclick="hideUploadProfilePictureConfirmDialog()">&times;</span>
+        </div>
+        <div id = "lower_part_of_upload_profile_picture_confirm_dialog_box">
+          <div id = "container_of_profile_picture">
+            <img src="" width=200 height=200 />
+          </div>
+        </div>
+        <div id="user_profile_upload_profile_buttons" >
+          <span id="cancel_user_profile_upload_button" class="lower_part_button_user_profile_upload" onclick="hideUploadProfilePictureConfirmDialog()">Cancel</span>
+          <span id = "upload_user_profile_upload_button" class="lower_part_button_user_profile_upload" onclick = "setProfilePictureOfTheUser()">Upload</span>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

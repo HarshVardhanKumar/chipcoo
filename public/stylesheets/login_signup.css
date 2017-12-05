@@ -1,0 +1,131 @@
+#login_signup_form {
+  width: 600px ;
+  height: 500px ;
+  margin: auto ;
+  text-align: center ;
+  border-bottom: 2px solid #aaa ;
+  z-index:5 ;
+  position: fixed ;
+  top: 50vh ;
+  left: 50vw ;
+  margin-left: -300px ;
+  margin-top: -250px ;
+  display: none ;
+  font-size: 1.2em ;
+  font-weight: 600 ;
+  background-color: white ;
+  border-radius: 20px ;
+  overflow: hidden;
+}
+
+#upper_part {
+  padding: 20px ;
+  background-color: white ;
+  color: black ;
+}
+
+#close_login_signup_form {
+  font-size: 2em ;
+  float:right ;
+  margin-top: -10px ;
+  cursor: pointer ;
+}
+
+#left_part {
+  background-color: #fff ;
+  border-right: 2px solid #aaa ;
+}
+
+#left_part, #right_part {
+  height: 400px ;
+  text-align: center ;
+}
+
+#left_signup, #left_login {
+  display: inline-block ;
+  text-align: center ;
+  padding: 20px  0px;
+  width: 49% ;
+  cursor: pointer ;
+  border-bottom: 1px solid #aaa ;
+}
+
+#left_login {
+  text-align:left ;
+  background-color: #666;
+  color: white ;
+}
+
+#left_signup:hover, #left_login:hover {
+  background-color: #666 ;
+  color: white ;
+}
+
+input[type="text"], input[type="password"] {
+  display: block ;
+  padding: 5px;
+  font-size: 1.12em ;
+  border: none ;
+  border-bottom: 2px solid #aaa ;
+  margin: auto ;
+  text-align: center ;
+  margin-top: 45px ;
+}
+
+#register, #login {
+  background-color: #007fef;
+  color: white ;
+  font-size: 1.12em ;
+  width: 50% ;
+  margin: auto ;
+  margin-top: 45px ;
+  padding: 10px ;
+  cursor: pointer ;
+}
+
+#register:hover, #login:hover {
+  background-color: #0045ac ;
+}
+
+#facebook_login, #twitter_login, #google_login {
+  color: white ;
+  padding: 5px 2px ;
+  font-size: 1.1em ;
+  font-weight:550 ;
+  cursor:pointer ;
+}
+
+#login_right_part {
+  margin: auto ;
+  background-color: transparent ;
+  padding-top: 100px ;
+}
+#twitter_login, #google_login {
+  margin-top: 20px ;
+}
+
+#facebook_login {
+  color: #475993
+}
+#twitter_login {
+  color: #76A9EA ;
+}
+#google_login {
+  color: #F34A38
+}
+
+#right_part img {
+  vertical-align: middle ;
+}
+
+@media screen and (max-width: 600px) {
+  #login_signup_form {
+    width: 95vw;
+    height: 80vh ;
+    position: fixed;
+    top:10 ;
+    left: 0 ;
+    margin: 0 ;
+    font-size: 1em;
+  }
+}

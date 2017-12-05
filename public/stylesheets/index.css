@@ -1,0 +1,143 @@
+body {
+  padding: 0 ;
+  margin: 0 ;
+  background-color: rgba(221,221,221, 0.5) ;
+}
+@import url('https://fonts.googleapis.com/css?family=Macondo+Swash+Caps');
+body {
+  padding: 0 ;
+  margin: 0 ;
+}
+
+#upper_navigation {
+  position: fixed ;
+  top: 0 ;
+  left: 0 ;
+  height: 65px ;
+  width: 100vw ;
+  color: white ;
+  background-color: rgb(255,255,255) ;
+  /* called to make the upper navigation at the always.*/
+  z-index: 1000 ;
+}
+
+#title {
+  vertical-align: middle ;
+  display: inline-block;
+  padding: 15px 20px ;
+  float: left ;
+  font-size: 1.2em ;
+}
+#user {
+  float: right ;
+  padding: 17px ;
+  padding-right: 30px ;
+  cursor: pointer ;
+  transition: all 0.5s ;
+}
+#user_icon {
+  border-radius:50% ;
+  transition: all 0.5s ;
+}
+#user:hover #user_icon {
+  width: 35px ;
+  height: 35px ;
+}
+#user:hover {
+  padding-top: 15px ;
+  padding-bottom: 12px ;
+}
+#content {
+  margin:auto ;
+  margin-top: 100px ;
+  text-align: center;
+}
+#addbutton {
+  text-align: center ;
+  position: fixed ;
+  right: 50px ;
+  bottom: 50px ;
+  transition: all 0.4s ;
+  background-color: white ;
+  border-radius: 50% ;
+  display: none ;
+  z-index: 1 ;
+}
+
+#addbutton:hover {
+  cursor: pointer ;
+  bottom: 55px ;
+}
+
+li {
+  list-style-type: none ;
+  padding: 10px 0 ;
+}
+
+li:hover {
+  background-color: #111 ;
+}
+
+#add_options_dialog {
+  position: fixed ;
+  right: 120px ;
+  bottom: 50px ;
+  transition: all 0.5s ;
+  display: none ;
+  margin: auto ;
+  text-align:center ;
+  width: 300px ;
+  border: 2px solid #ddd ;
+  padding: 10px ;
+  border-radius: 10px;
+  color: black;
+  background-color: rgb(255,255,255);
+  z-index: 1 ;
+}
+
+#add_Using_Website_DialogBox {
+  border: 2px solid #bfbfbf ;
+  border-radius: 10px ;
+  padding: 20px ;
+  position: fixed;
+  display: none;
+  width: 75%;
+  margin: auto;
+  z-index : 3;
+  top: 40vh;
+  left: 10vw ;
+  background-color: #fff;
+  box-shadow: 2px 2px #aba;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.whitemodal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(255,255,255); /* Fallback color */
+    background-color: rgba(255,255,255,255.4); /* Black w/ opacity */
+}
+/* Modal Content/Box */
+.modal-content {
+     /* 15% from the top and centered */
+    width: 80%; /* Could be more or less, depending on screen size */
+}

@@ -1,0 +1,53 @@
+<div class = "dialog" id = "user_profile_dialog">
+  <div class = "dialog_content" id = "user_profile_view">
+  <div id = "user_upper_part">
+    <div id = "cancel_user_profile">&times; </div>
+    <!--class = authorized means that it will be accessed only during authorized mode.-->
+    <!--class = authorized_edit means that it is readonly in unauthorized mode-->
+    <div id = "left_upper_part">
+      <div id = "user_profile_picture">
+      <div id = "user_picture" class = "authorized_edit" title="Upload new picture">
+        <label>
+          <img src="https://avatars2.githubusercontent.com/u/13112792?s=460&v=4" width=150 height = 150/>
+
+          <input accept="image/*" class="authorized" type="file" style="position: fixed; top: -100em;">
+        </label>
+      </div>
+      <br>
+      <p class="authorized" style="width: 200px; margin: auto; text-align: center">
+        Click on image to change
+      </p>
+
+      <div id = "earnings">
+        <p style="font-size: 1.12em; font-weight:bold;">
+          Earnings:
+        </p>
+        <span id = "earnings_count">
+          <span id = "smiles_count">0</span><i class = "fa fa-smile-o"></i><span id = "meh_count">0</span><i class = "fa fa-meh-o"></i><span id = "frowns_count">0</span><i class = "fa fa-frown-o"></i>
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+  <div id = "right_upper_part">
+    <div id = "user_details">
+      <input class = "authorized_edit" type="text" name = "username" placeholder = "Enter new username"/>
+      <input class="authorized authorized_edit" type = "password" name = "password" placeholder = "Enter new Password" />
+      <p class = "authorized">
+        (Leave it empty for keeping unchanged)
+      </p>
+      <textarea class = "authorized_edit" id = "description" placeholder = "I am a dummy user, a sailor in the ocean of knowledge and this is about me." maxlength = 200></textarea>
+      <div class = "authorized" id = "save_button">
+        Save
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id = "user_lower_part" style="clear:right ;float:left ;  width: 100%">
+  <hr style="border:2px solid #aaa ;">
+  This part contains the stickys uploaded by the user.
+</div>
+</div>
+</div>

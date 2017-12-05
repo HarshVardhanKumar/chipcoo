@@ -1,0 +1,20 @@
+/* for the devices having width less than 800px */
+@media screen and (max-width : 600px) {
+  #upper_navigation {
+    position: fixed;
+    bottom: 0 ;
+    top: calc(100vh - 65px);
+    left: 0 ;
+    color: rgb(56,133,188) ;
+    background-color: rgba(255,255,255,1.0) ;
+    width: 100vw ;
+  }
+
+  #content {
+    margin-top: 30px ;
+  }
+
+  #addbutton {
+    bottom: 80px;
+  }
+}

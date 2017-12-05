@@ -1,0 +1,33 @@
+#logged_in_user_options {
+  width: 150px ;
+  background-color: #fff ;
+  position: absolute ;
+  right: 10px ;
+  text-align: center ;
+  font-weight: 600 ;
+  border-radius: 10px ;
+  overflow: hidden ;
+  font-size: 0.8em ;
+  display: none ;
+  z-index: 5 ;
+  top: 100px ;
+}
+
+#view_my_profile_option {
+  padding: 15px ;
+  border-bottom: 1.5px solid #aaa ;
+}
+
+#view_my_profile_option:hover {
+  background-color: rgb(56,133,188) ;
+  color: white ;
+  cursor: pointer ;
+}
+#logout_option {
+  padding: 15px ;
+}
+#logout_option:hover {
+  background-color: rgb(56,133,188) ;
+  color: white ;
+  cursor: pointer ;
+}
