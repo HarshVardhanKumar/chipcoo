@@ -18,4 +18,10 @@
   #addbutton {
     bottom: 80px;
   }
+
+  #addbutton:hover {
+    cursor: pointer ;
+    bottom: 85px ;
+  }
+
 }
