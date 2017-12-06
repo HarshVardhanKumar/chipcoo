@@ -6,8 +6,9 @@
   left: 2vw ;
   width: 95vw ;
   height: 100vh ;
-  z-index: 500;
+  z-index: 5;
   display: none ;
+  overflow: auto;
 }
 
 #show_sticky_upper_part {
@@ -110,4 +111,44 @@
 #show_sticky .ratings .fa-frown-o:hover {
   color: red ;
   cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  #show_sticky_upper_part {
+    font-size: 2em ;
+  }
+  #left_part_show_sticky, #right_part_show_sticky {
+    padding: 20px ;
+    padding-left: 0px ;
+    width: 99vw ;
+  }
+
+  #sticky_title_show_sticky {
+    margin: 10px 0 ;
+    font-weight: bold ;
+    font-size: 1em ;
+  }
+
+  #sticky_description_show_sticky {
+    margin: 10px 0 ;
+    font-size: 0.8em ;
+    padding: 10px ;
+  }
+
+  #review_name {
+    margin: auto ;
+    text-align: center ;
+    font-size: 1em ;
+    font-weight: bold ;
+    color: rgb(56,133, 188) ;
+    padding: 10px ;
+  }
+
+  #show_sticky .ratings .fa {
+    font-size: 1.5em ;
+    padding: 5px 10px ;
+    vertical-align: middle ;
+    color: black ;
+  }
+
 }
