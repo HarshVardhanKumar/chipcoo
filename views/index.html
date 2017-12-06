@@ -30,11 +30,12 @@
 		<style>
 			.grid-item { width: 250px; padding: 10px 0px;}
 			.grid-item--width2 { width: 400px; }
+      .list-grid-item {width: 250px; padding: 10px 0px;}
 
       @media screen and (max-width: 600px) {
         .grid-item { width: 150px; padding: 10px 0px;}
   			.grid-item--width2 { width: 220px; }
-
+        .list-grid-item {width: 150px; padding: 10px 0px;}
       }
 		</style>
     <link rel="stylesheet" href="public/stylesheets/logged_in_user.css"></link>
@@ -223,7 +224,7 @@
           &times;
         </div>
 
-          <div id = "list_of_sticky_uploaded_by_the_user" class = "list_grid" data-masonry='{ "itemSelector": ".list-grid-item", "columnWidth": 350 }'>
+          <div id = "list_of_sticky_uploaded_by_the_user" class = "list_grid" data-masonry='{ "itemSelector": ".list-grid-item"}'>
              This part will contain list of all the stickys uploaded by the session_user.
           </div>
 

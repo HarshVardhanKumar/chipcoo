@@ -122,6 +122,7 @@ function generateListOfStickyInTheContainerElement(grid_selector,list_selector, 
         itemSelector: '.'+list_selector,
         columnWidth: 150,
         gutter: 10,
+        horizontalOrder: true ,
         fitWidth: fit_width,
         stagger: 30
       });
@@ -163,7 +164,9 @@ function createNewStickyInTheContainerElement(grid_selector,list_selector, stick
 
   var sticky =  $("<div class='"+list_selector+"'><div id='"+_id+"' onclick=getStickyDetails('"+_id+"') class='body_sticky'><div class = 'sticky_title'>"+title+"</div><div class = 'sticky_image'><img class='sticky_imag' src="+image+" width="+sticky_image_width+" /></div><div class='sticky_rating'><span class='ratings'><span id='smilevalue' class='ratingsvalue'>"+smiles+"</span><i title='"+smiles+" smiles' class='fa fa-smile-o' aria-hidden='true'></i><span id='mehvalue' class='ratingsvalue'>"+meh+"</span><i title='"+meh+" mehs' class='fa fa-meh-o' aria-hidden='true'></i><span id='frownvalue' class='ratingsvalue'>"+frowns+"</span><i title='"+frowns+" frowns' class='fa fa-frown-o' aria-hidden='true'></i></span></div><input class = 'description' type='hidden' value = '"+description+"'></input></div></div>");
 
-  if(deletebutton) {
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// in the mobile version, the delete buttons will not be shown///////////////////////
+  if(deletebutton && $(window).width()>600) {
     deletebuttoncode.attr('onclick', 'deleteThisSticky("'+_id+'")')
     sticky.append(deletebuttoncode);
   }
@@ -378,7 +381,8 @@ function showUserProfileDialog(user_name, access_type, uploader_profile_picture,
 
   $("#user_profile_dialogg #user_profile_view #user_first_intro #no_of_stickers_count").text(no_of_stickers_count) ;
 
-  if (access_type === "unauthorized") {
+// Allow AUTHORIZED USER OPTIONS ONLY IF THE WINDOW SIZE OF THE BROWSER IS MORE THAN 600PX .
+  if (access_type === "unauthorized" || $(window).width()<600) {
     unauthorizedUserDialog() ;
   }
   else {
