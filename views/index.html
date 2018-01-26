@@ -3,6 +3,7 @@
     <title>chipcoo</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Dancing+Script|Kaushan+Script" rel="stylesheet">
     <link rel = "stylesheet" href = "public/stylesheets/user_profile_dialog.css"></link>
     <link rel = "stylesheet" href="public/stylesheets/index.css"></link>
     <link rel = "stylesheet" href="public/stylesheets/index_mobile.css"></link>
@@ -44,7 +45,7 @@
   <body>
 
     <div id = "upper_navigation">
-      <span id = "title"><img src = "public/images/logo_home.png" width = 40px height = 40px></span>
+      <span id = "title"><img style="vertical-align:middle;" src = "public/images/logo_home.png" width = 40px height = 40px><span id = "nameOfApplication">Chipcoo</span></span>
       <span id = "user">
         <img onclick="showLoginSignup()" id="user_icon" src = "public/images/user.png" width=30 height = 30>
       </span>
@@ -187,7 +188,7 @@
           <!-- get the uploader_image from the server and set it here. Default width and height are 20 and 20, but the image stored in the server is 150 by 150 with reduced quality-->
             <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" id = "uploader-image" width=50px height = 50px>
           </span>
-          <span id = "uploader_name_show_sticky"> name of the uploader
+          <span id = "uploader_name_show_sticky" style="cursor:pointer"> name of the uploader
           </span>
         </div>
 
