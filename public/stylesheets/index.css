@@ -8,6 +8,12 @@ body {
   padding: 0 ;
   margin: 0 ;
 }
+#nameOfApplication {
+  font-family: 'Courgette', cursive;
+  color: #080 ;
+  font-size: 1.5em ;
+  padding: 0px 10px ;
+}
 
 #upper_navigation {
   position: fixed ;
@@ -19,6 +25,7 @@ body {
   background-color: rgb(255,255,255) ;
   /* called to make the upper navigation at the always.*/
   z-index: 1000 ;
+  box-shadow: 4px 0px 10px rgb(10,10,10) ;
 }
 
 #title {
@@ -26,7 +33,7 @@ body {
   display: inline-block;
   padding: 15px 20px ;
   float: left ;
-  font-size: 1.2em ;
+  cursor: pointer;
 }
 #user {
   float: right ;
@@ -62,7 +69,7 @@ body {
   border-radius: 50% ;
   display: none ;
   z-index: 1 ;
-  box-shadow: 2px 2px #aaa ;
+  box-shadow: 2px 2px 4px rgb(10,10,10), -2px 2px 4px rgb(10,10,10) ;
 }
 
 #addbutton:hover {
@@ -108,7 +115,7 @@ li:hover {
   top: 40vh;
   left: 10vw ;
   background-color: #fff;
-  box-shadow: 2px 2px #aba;
+  box-shadow: 2px 2px 4px rgb(10,10,10);
 }
 
 /* The Modal (background) */
